@@ -1,30 +1,18 @@
-const  = require('./models/.js');
-const  = require('./views/.js');
-const  = require('./views/error_view.js');
-const  = require('./views/.js');
-
-
+const Beers = require('./models/beers.js');
+const SelectView = require('./views/selectBeer.js');
+const BeersListView = require('./views/displayBeer.js');
+// const  = require('./views/error_view.js');
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript Loaded');
+  const beerSelect = document.querySelector('select#beer-select');
+  const beerSelectView = new SelectView(beerSelect);
+  beerSelectView.bindEvents();
 
-  const cards. = new Card();
-  cards.getData();
-  cards.bindEvents();
+  const beersContainer = document.querySelector('#beer-container');
+  const beersListView = new BeersListView(beersContainer);
+  beersListView.bindEvents();
 
-  const pick_a_card = document.querySelector('#card');
-  const regionDropdown = new RegionSelectView(selectElement);
-  regionDropdown.bindEvents();
-
-  // const munroListContainer = document.querySelector('#region');
-  // const munroListView = new RegionOutputView(munroListContainer);
-  // munroListView.bindEvents();
-  //
-  // const region = new Region();
-  // region.getData();
-  // region.bindEvents();
-  //
-  // const selectElement = document.querySelector('#munros');
-  // const regionDropdown = new RegionSelectView(selectElement);
-  // regionDropdown.bindEvents();
-})
+  const beers = new Beers();
+  beers.bindEvents();
+});

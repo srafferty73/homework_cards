@@ -1,4 +1,9 @@
 body{
-  background-image: url(./emerald_green.jpg);
-  font-family: CARDCOUNT;
+  /* background-image: url(./beer-wallpaper.jpg);
+  background-size:cover; */
+  /* font-family: CARDCOUNT; */ */
+}
+
+img {
+  height: 300px;
 }
